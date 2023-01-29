@@ -25,12 +25,12 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://taskmanager-frontend.onrender.com",
+      "https://taskmanager-frontend.onrender.com/",
     ],
   })
 );
 
-app.use("/api/tasks", taskRoutes);
+app.use("api/tasks", taskRoutes);
 
 //--------------------------------------------------------------------------
 
