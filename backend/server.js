@@ -39,37 +39,37 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}`);
-//     });
-//   })
-//   .catch((err) => console.log(err));
-
-//Create a Task
-
-app.post("/api/tasks", async (req, res) => {
-  try {
-    const task = await Task.create(req.body);
-    res.status(200).json(task);
-  } catch (error) {
-    res.status(500).json({ ERROR: error.message });
-  }
-});
-
-const PORT = process.env.PORT || 5000;
-const startServer = async () => {
-  try {
-    await connect();
-
-    app.listen(PORT, (req, res) => {
-      console.log(`Server is running on PORT ${PORT}`);
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
-  } catch (error) {
-    console.log(error);
-  }
-};
+  })
+  .catch((err) => console.log(err));
 
-startServer();
+Create a Task
+
+// app.post("/api/tasks", async (req, res) => {
+//   try {
+//     const task = await Task.create(req.body);
+//     res.status(200).json(task);
+//   } catch (error) {
+//     res.status(500).json({ ERROR: error.message });
+//   }
+// });
+
+// const PORT = process.env.PORT || 5000;
+// const startServer = async () => {
+//   try {
+//     await connect();
+
+//     app.listen(PORT, (req, res) => {
+//       console.log(`Server is running on PORT ${PORT}`);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// startServer();
