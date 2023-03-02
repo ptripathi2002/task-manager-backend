@@ -26,7 +26,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://inventory-manager-ochre.vercel.app",
+      "https://taskmanager-frontend.onrender.com",
     ],
   })
 );
